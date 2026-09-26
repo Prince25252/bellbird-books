@@ -1,40 +1,29 @@
-﻿# Python
+# 字节码 / 缓存
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-.Python
+*.egg-info/
+
+# 虚拟环境
 .venv/
 venv/
 env/
-ENV/
 
-# Node
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# 数据文件（运行时生成，不入库）
+data/*.json
+data/*.jsonl
 
-# Environment and secrets
-.env
-.env.*
-!.env.example
-*.pem
-*.key
+# 配置本地副本（仅保留 config.sample.json 入库）
+config/config.json
 
-# Testing and coverage
+# 测试与覆盖率
 .pytest_cache/
 .coverage
 htmlcov/
-coverage/
 
-# IDE / OS
+# 编辑器
 .vscode/
 .idea/
+
+# 操作系统
 .DS_Store
 Thumbs.db
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
