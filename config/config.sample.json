@@ -1,0 +1,6 @@
+{
+    "app_name": "Bellbird Books",
+    "data_dir": "data",
+    "currency": "AUD",
+    "log_level": "INFO"
+}
