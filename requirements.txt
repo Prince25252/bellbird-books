@@ -1,1 +1,6 @@
-pytest>=7.0
+# Development dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Runtime dependencies (add as needed)
+# flask>=2.0.0
