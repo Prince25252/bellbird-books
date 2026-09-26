@@ -8,7 +8,7 @@ import argparse
 import json
 import sys
 
-from .inventory import InventoryService
+from .services.inventory import InventoryService
 from .storage import JsonStorage
 
 
