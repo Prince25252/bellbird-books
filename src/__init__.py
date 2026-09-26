@@ -1,1 +1,1 @@
-"""src 包：Bellbird Books 应用代码。"""
+"""src package: Bellbird Books application code."""

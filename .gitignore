@@ -1,29 +1,23 @@
-# 字节码 / 缓存
+# Bytecode / cache
 __pycache__/
 *.py[cod]
 *.egg-info/
-
-# 虚拟环境
+# Virtual environment
 .venv/
 venv/
 env/
-
-# 数据文件（运行时生成，不入库）
+# Data files (generated at runtime, not committed)
 data/*.json
 data/*.jsonl
-
-# 配置本地副本（仅保留 config.sample.json 入库）
+# Local config copy (only config.sample.json is committed)
 config/config.json
-
-# 测试与覆盖率
+# Tests and coverage
 .pytest_cache/
 .coverage
 htmlcov/
-
-# 编辑器
+# Editors
 .vscode/
 .idea/
-
-# 操作系统
+# Operating system
 .DS_Store
 Thumbs.db
