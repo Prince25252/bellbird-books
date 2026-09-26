@@ -36,14 +36,6 @@ python -m src.cli
 pytest
 ```
 
-## Implemented features
-
-- **ST-01 新书录入库存**：`src/services/inventory.py::add_new_book` 按（书名+作者+ISBN）聚合管理（A07），重复录入自动合并数量。
-- **ST-02 新书数量增减**：到货增加 / 售出扣减，数量不可为负。
-- **ST-14 本地 JSON 持久化**：`src/storage/`，数据保存于 `data/db.json`，重启不丢失。
-- **CLI**：`python -m src.cli add-new-book "书名" "作者" --quantity 5`
-- **自动化测试**：`tests/test_new_book.py`（pytest，覆盖 ST-01 / ST-02 与 A07 合并逻辑）
-
 ## Project structure
 
 ```
@@ -54,9 +46,8 @@ bellbird-books/
 │   ├── storage/            # Persistence layer (JSON file storage)
 │   └── cli.py              # Command-line entry point
 ├── tests/                  # Automated tests
-│   ├── test_smoke.py       # Test runner smoke test
-│   ├── test_new_book.py    # New book inventory business logic tests (ST-01/02)
-│   ├── test_used_book.py   # Used book inventory business logic tests
+│   ├── test_new_book.py    # New book inventory business logic tests
+│   ├── test_used_book.py  # Used book inventory business logic tests
 │   └── test_order.py       # Order lifecycle tests
 ├── docs/                   # Project documentation
 ├── scripts/                # Setup and utility scripts
