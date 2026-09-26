@@ -59,7 +59,6 @@ class OrderService:
                 if new_status not in _TRANSITIONS.get(cur, set()):
                     raise ValueError(f"Illegal status transition: {cur} -> {new_status} (A16)")
                 o["status"] = new_status
-                # On arrival record notified_at as the 14-day return base (ST-13)
                 if new_status == "arrived":
                     o["notified_at"] = _now()
                 self.storage.save()
@@ -86,9 +85,7 @@ class OrderService:
         return (datetime.now() - arrived).days
     def return_overdue_orders(self, overdue_days: int = 14) -> List[dict]:
         """Orders not collected overdue_days days after arrival are judged overdue returns
-        (ST-13 / A16).
-
-        Returns the list of overdue orders (still in arrived status, for the caller to restock/notify)."""
+        (ST-13 / A16)."""
         overdue = []
         for o in self.storage.get_list("orders"):
             if o["status"] not in ("arrived", "notified"):

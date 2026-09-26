@@ -45,10 +45,8 @@ def test_st06_mark_used_book_sold_does_not_affect_others(svc):
     uid2 = svc.add_used_book("The Hobbit", condition="As New", sale_price=15.0)
     svc.mark_used_book_sold(uid1, sold_price=10.0)
     ubs = svc.search_used_books("hobbit", only_available=True)
-    # Only the other copy is still for sale
     assert len(ubs) == 1
     assert ubs[0]["id"] == uid2
-    # The original copy's status is now sold
     full = svc.search_used_books("hobbit", only_available=False)
     sold = next(b for b in full if b["id"] == uid1)
     assert sold["status"] == "sold"
